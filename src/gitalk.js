@@ -28,7 +28,7 @@ const create = async function (options = { title, label, accessToken, repo, owne
                 if (JSON.parse(data).title === options.title) {
                     resolve(true)
                 } else {
-                    console.log('接口返回数据'+data)
+                    console.log('接口返回数据' + data)
                     resolve(false)
                 }
             });
@@ -67,11 +67,14 @@ const search = function (options = { title, label, accessToken, repo, owner }) {
             });
             res.on('end', () => {
                 data = JSON.parse(data)
-                console.log(data.length)
-                if (data.length === 0) {
+                if (!data) {
+                    console.log("接口返回数据：" + JSON.stringify(data))
                     resolve(false)
-                } else {
+                }
+                else if (data.length >= 1) {
                     resolve(true)
+                } else {
+                    resolve(false)
                 }
             });
         });
@@ -90,13 +93,13 @@ const search = function (options = { title, label, accessToken, repo, owner }) {
 //     owner: 'xuzhongpeng'
 // })
 async function createGitalk(pages, options) {
-    for(const v of pages){
-        let o=new Object();
+    for (const v of pages) {
+        let o = new Object();
         o.label = v.path
-        o.title=v.title
+        o.title = v.title
         let has = await search({ ...options, ...o })
         if (!has) {
-            console.log(v.title+' 开始创建')
+            console.log(v.title + ' 开始创建')
             let res = await create({ ...options, ...o })
             if (res) console.log(v.title + ' 创建成功')
             else console.log(v.title + ' 创建失败')
@@ -119,5 +122,5 @@ async function createGitalk(pages, options) {
 //         title: 'test3'
 //     }
 // ]
-module.exports=createGitalk
+module.exports = createGitalk
 // createGitalk(pages, options)
