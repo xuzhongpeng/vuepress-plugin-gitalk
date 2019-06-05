@@ -1,0 +1,24 @@
+{
+  "name": "vuepress-plugin-gitalk",
+  "version": "0.1.0",
+  "description": "VuePress plugin for creating Gitalk automation",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuzhongpeng/vuepress-plugin-gitalk.git"
+  },
+  "keywords": [
+    "vuepress",
+    "plugin",
+    "gittalk"
+  ],
+  "author": "JSShou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xuzhongpeng/vuepress-plugin-gitalk/issues"
+  },
+  "homepage": "https://github.com/xuzhongpeng/vuepress-plugin-gitalk#readme"
+}
