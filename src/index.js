@@ -2,7 +2,7 @@ module.exports = (options, context) => {
     return {
         extendCli(cli) {
             cli
-                .command('gittalk [targetDir]', '')
+                .command('gitalk [targetDir]', '')
                 .option('--debug', 'display info in debug mode')
                 .action(() => {
                     var site = require(context.sourceDir + '/.vuepress/config.js')
