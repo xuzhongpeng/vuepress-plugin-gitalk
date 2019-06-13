@@ -86,12 +86,6 @@ const search = function (options = { title, label, accessToken, repo, owner }) {
         req.end();
     })
 }
-// search({
-//     label: 'test1',
-//     accessToken: '33898388ba2bb909e11368f3d4b4c0ce71491d9d',
-//     repo: 'xuzhongpeng.github.io',
-//     owner: 'xuzhongpeng'
-// })
 async function createGitalk(pages, options) {
     for (const v of pages) {
         let o = new Object();
@@ -108,19 +102,4 @@ async function createGitalk(pages, options) {
     }
 }
 
-// let options = {
-//     accessToken: '33898388ba2bb909e11368f3d4b4c0ce71491d9d',
-//     repo: 'xuzhongpeng.github.io',
-//     owner: 'xuzhongpeng'
-// }
-// let pages = [
-//     {
-//         path: 'blog/computer/计算机基础.html',
-//         title: '计算机基础'
-//     }, {
-//         path: 'test1',
-//         title: 'test3'
-//     }
-// ]
 module.exports = createGitalk
-// createGitalk(pages, options)

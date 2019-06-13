@@ -6,7 +6,7 @@ module.exports = (options, context) => {
                 .option('--debug', 'display info in debug mode')
                 .action(() => {
                     var site = require(context.sourceDir + '/.vuepress/config.js')
-                    var talkConfig = site().themeConfig.gitTalk
+                    var talkConfig = site().themeConfig.gitalk
                     var createGitalk=require('./gitalk.js')
                     var pages=context.pages.filter(v=>v.title)
                     if(talkConfig.labelRule){
